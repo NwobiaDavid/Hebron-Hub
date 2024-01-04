@@ -17,7 +17,7 @@ export default async function page({params}: {params: {id: string}}) {
   return (
     <section>
         <ProfileHeader
-        accountId={communityDetails.id}
+        accountId={communityDetails._id}
         authUserId={user.id}
         name={communityDetails.name}
         username={communityDetails.username}

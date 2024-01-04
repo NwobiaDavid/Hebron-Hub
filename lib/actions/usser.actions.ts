@@ -31,14 +31,14 @@ interface Params {
   path: string;
 }
 
-export async function updateUser({
+export async function updateUser(
   userId,
   bio,
   name,
   path,
   username,
   image,
-}: Params): Promise<void> {
+  ): Promise<void> {
   try {
     connectToDB();
 
@@ -181,7 +181,7 @@ export async function getActivity(userId: string) {
     throw error;
   }
 }
-utils.ts
+
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
