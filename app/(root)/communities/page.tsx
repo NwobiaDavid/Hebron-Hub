@@ -2,7 +2,7 @@ const Page = async() => {
     return(
         <section>
             <h1 className="head-text mb-10">
-                Search
+                Communities
             </h1>
         </section>
     )
