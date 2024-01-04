@@ -1,5 +1,6 @@
 
 
+import { formatDateString } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -75,10 +76,23 @@ export default function ThreadCard({
                     </div>
                 </div>
             </div>
+
         </div>
-        {/* <h2 className="text-small-regular text-light-2">
-            {content}
-        </h2> */}
+            {!isComment && community && (
+                <Link href={`/communities/${community.id}`} className='mt-5 ' >
+                    <p className="text-subtle-medium text-gray-1">
+                        {formatDateString(createdAt)}
+                        - {community.name} Community
+                    </p>
+                    <Image
+                    src={community.image}
+                    alt={community.name}
+                    width={14}
+                    height={14}
+                    className='ml-1 rounded-full object-cover '
+                     />
+                </Link>
+            )}
     </article>
   )
 }
