@@ -68,7 +68,7 @@ export default function ThreadCard({
                             <Image src="/assets/heart-gray.svg" alt=""  className="cursor-pointer object-contain" width={24} height={24} />
 
                             <Link href={`/thread/${id}`}>
-                                <Image src="/assets/reply.svg" alt=""  className="cursor-pointer object-contain" width={24} height={24} />
+                                <Image src="/assets/reply.svg" alt=""  className=" cursor-pointer object-contain" width={24} height={24} />
                             </Link>
 
                             {/* <Image src="/assets/repost.svg" alt=""  className="cursor-pointer object-contain" width={24} height={24} />
