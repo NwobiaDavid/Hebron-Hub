@@ -41,7 +41,7 @@ export default function ThreadCard({
     isComment
 }: Props) {
   return (
-    <article className={`flex w-full flex-col rounded-xl  ${isComment? 'px-0 xs:px-7': 'border hover:bg-gray-100 duration-150 cursor-pointer p-7'}`}>
+    <article className={`flex w-full flex-col rounded-xl  ${isComment? 'px-0 xs:px-7': 'border duration-150 cursor-pointer p-7'}`}>
         <div className="flex items-start justify-between ">
             <div className="flex w-full flex-1 flex-row gap-4">
 
@@ -64,11 +64,12 @@ export default function ThreadCard({
 
                     <div className={`${isComment && 'mb-10' } mt-5 flex flex-col gap-3`}>
 
-                        <div className="flex gap-3.5">
-                            <Image src="/assets/heart-gray.svg" alt=""  className="cursor-pointer object-contain" width={24} height={24} />
+                        <div className="w-full">
+                            {/* <Image src="/assets/heart-gray.svg" alt=""  className="cursor-pointer object-contain" width={24} height={24} /> */}
 
-                            <Link href={`/thread/${id}`}>
+                            <Link className="w-full p-2 rounded-lg hover:bg-gray-200 flex justify-center items-center border border-blue-200 " href={`/thread/${id}`}>
                                 <Image src="/assets/reply.svg" alt=""  className=" cursor-pointer object-contain" width={24} height={24} />
+                                <p>Reply</p>
                             </Link>
 
                             {/* <Image src="/assets/repost.svg" alt=""  className="cursor-pointer object-contain" width={24} height={24} />
