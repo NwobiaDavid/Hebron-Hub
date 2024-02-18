@@ -31,14 +31,14 @@ interface Params {
   path: string;
 }
 
-export async function updateUser(
+export async function updateUser({
   userId,
   bio,
   name,
   path,
   username,
   image,
-  ): Promise<void> {
+}: Params): Promise<void> {
   try {
     connectToDB();
 
@@ -216,7 +216,7 @@ export async function formatDateString(dateString: string) {
 }
 
 // created by chatgpt
-export async function formatThreadCount(count: number): string {
+export async function formatThreadCount(count: number) {
   if (count === 0) {
     return "No Threads";
   } else {

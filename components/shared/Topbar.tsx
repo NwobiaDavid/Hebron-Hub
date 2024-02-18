@@ -9,12 +9,12 @@ export default function Topbar() {
     <nav className="topbar " >
       <Link href="/" className="flex items-center gap-4">
         <Image src="/assets/logo.svg" alt="logo" width={28} height={28} />
-        <p className="text-heading3-bold text-light-1 max-xs:hidden">
-          Threads
+        <p className="text-heading3-bold  max-xs:hidden">
+          Hebron <span className="bg-yellow-400 px-3 py-2 tracking-wider rounded-2xl ">HUB</span>
         </p>
       </Link>
 
-      <div className="flex items-center gap-1 ">
+      <div className="flex bg-gray-200 p-1 rounded-xl items-center gap-1 ">
         <div className="block md:hidden ">
           <SignedIn>
             <SignOutButton>
@@ -25,7 +25,7 @@ export default function Topbar() {
           </SignedIn>
         </div>
         <OrganizationSwitcher appearance={{
-          baseTheme: dark,
+          // baseTheme: light,
           elements: {
               organizationSwitcherTrigger: "py-2 px-4"
           }

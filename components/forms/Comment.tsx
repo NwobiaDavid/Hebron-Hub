@@ -63,19 +63,19 @@ const Comment = ({threadId, currentUserImg, currentUserId}:Props) => {
                 alt="profile pic"
                 width={48}
                 height={48}
-                className="rounded-full object-cover" />
+                className="rounded-full object-contain " />
             </FormLabel>
             <FormControl className="border-none bg-transparent  " >
               <Input
               type="text"
               placeholder="comment..."
-              className="no-focus text-light-1 outline-none"
+              className="no-focus outline-none"
               {...field} />
             </FormControl>
           </FormItem>
         )}
       />
-      <Button type="submit" className="comment-form_btn">
+      <Button type="submit" className="comment-form_btn text-black font-semibold bg-yellow-400 hover:bg-yellow-500 duration-200 ">
         Reply
         </Button>
     </form>

@@ -90,15 +90,20 @@ export async function createThread({ text, author, communityId, path }: Params
 }
 
 async function fetchAllChildThreads(threadId: string): Promise<any[]> {
-  const childThreads = await Thread.find({ parentId: threadId });
+  try{
+    const childThreads = await Thread.find({ parentId: threadId });
+  
+    const descendantThreads = [];
+    for (const childThread of childThreads) {
+      const descendants = await fetchAllChildThreads(childThread._id);
+      descendantThreads.push(childThread, ...descendants);
+    }
+  
+    return descendantThreads;
 
-  const descendantThreads = [];
-  for (const childThread of childThreads) {
-    const descendants = await fetchAllChildThreads(childThread._id);
-    descendantThreads.push(childThread, ...descendants);
+  } catch(error: any){
+    throw new Error(`Failed to fetch all children thread: ${error.message}`);
   }
-
-  return descendantThreads;
 }
 
 export async function deleteThread(id: string, path: string): Promise<void> {

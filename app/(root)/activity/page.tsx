@@ -1,4 +1,4 @@
-import { UserCard } from "@/components/cards/UserCard";
+import  {UserCard} from "@/components/cards/UserCard";
 import { profileTabs } from "@/components/constants";
 import PostThread from "@/components/forms/PostThread";
 import { ProfileHeader } from "@/components/shared/ProfileHeader";

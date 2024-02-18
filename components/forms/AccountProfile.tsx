@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -36,12 +35,13 @@ interface Props{
 }
 
 const AccountProfile = ({user, btnTitle}:Props) => {
-  const [files, setFiles] = useState<File[]>([])
-  const { startUpload } = useUploadThing("media")
   const router = useRouter()
   const pathname = usePathname()
 
-    const form = useForm({
+  const { startUpload } = useUploadThing("media")
+  const [files, setFiles] = useState<File[]>([])
+
+  const form = useForm<z.infer<typeof userValidation>>({
         resolver: zodResolver(userValidation),
         defaultValues: {
             profile_photo: user?.image || "",
@@ -79,11 +79,11 @@ const AccountProfile = ({user, btnTitle}:Props) => {
         const blob = values.profile_photo;
 
         const hasImageChanged = isBase64Image(blob);
+        if (hasImageChanged) {
+          const imgRes = await startUpload(files);
 
-        if(hasImageChanged){
-          const imgRes = await startUpload(files)
-          if(imgRes && imgRes[0].fileUrl){
-            values.profile_photo = imgRes[0].fileUrl;
+          if (imgRes && imgRes[0].url) {
+            values.profile_photo = imgRes[0].url;
           }
         }
 
@@ -122,7 +122,7 @@ const AccountProfile = ({user, btnTitle}:Props) => {
                     width={96}
                     height={96}
                     priority
-                    className='rounded-full object-contain'
+                    className='rounded-full object-cover'
                   />
                 ) : (
                   <Image
@@ -130,11 +130,11 @@ const AccountProfile = ({user, btnTitle}:Props) => {
                     alt='profile_icon'
                     width={24}
                     height={24}
-                    className='object-contain'
+                    className='object-cover'
                   />
                 )}
               </FormLabel>
-              <FormControl className='flex-1 text-base-semibold text-gray-200'>
+              <FormControl className='flex-1 text-base-semibold text-light-2 '>
                 <Input
                   type='file'
                   accept='image/*'
@@ -201,7 +201,7 @@ const AccountProfile = ({user, btnTitle}:Props) => {
           </FormItem>
         )}
       />
-      <Button type="submit" className="bg-primary-500" >Submit</Button>
+      <Button type="submit" className="bg-yellow-500 hover:bg-yellow-700 duration-200 " >Let's Go!</Button>
     </form>
   </Form>
   )

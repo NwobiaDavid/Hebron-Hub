@@ -1,7 +1,6 @@
 "use client"
 
 import Image from 'next/image';
-import React from 'react'
 import { Button } from '../ui/button';
 import { useRouter } from 'next/navigation';
 
@@ -26,16 +25,18 @@ export const UserCard = ({id, name, username, imgUrl, personType}: Props) => {
                     alt="logo"
                     width={48}
                     height={48}
-                    className='rounded-full'
+                    className='rounded-full object-fill '
                 />
                 <div className="flex-1 text-ellipsis">
                     <h4 className='text-base-semibold ' > {name} </h4>
                     <p className="text-small-medium text-gray-1">{username}</p>
                 </div>
             </div>
-            <Button className='user-card_btn ' onClick={()=> router.push(`/profile/${id}`) } >
+            <Button className="user-card_btn duration-200 bg-primary-500 hover:bg-dark-1 " onClick={()=> router.push(`/profile/${id}`) } >
                 View
             </Button>
         </article>
   )
 }
+
+// export default UserCard;
