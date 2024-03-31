@@ -61,19 +61,6 @@ export default function LeftSidebar() {
                 <p className=" max-lg:hidden">{link.label}</p>
               </motion.div>
                 </Link>
-            //   )
-            // })}
-    
-            //   <motion.div
-            //     key={link.label}
-            //     className={`leftsidebar_link cursor-pointer hover:bg-gray-300 duration-200 font-semibold ${
-            //       isActive && ' bg-gray-700 hover:bg-gray-700 text-white'
-            //     } `}
-            //     variants={sidebarItemVariants}
-            //   >
-            //     <Image src={link.imgURL} alt={link.label} width={24} height={24} />
-            //     <p className=" max-lg:hidden">{link.label}</p>
-            //   </motion.div>
             );
           })}
         </motion.div>
