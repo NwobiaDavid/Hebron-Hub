@@ -26,10 +26,10 @@ export default function LeftSidebar() {
   return (
     <motion.section
       className="custom-scrollbar leftsidebar"
-      initial={{ opacity: 0 , x:"-100vw"}}
-      animate={{ opacity: 1 , x:0}}
-      transition={{ duration: 0.5 }}
-      exit={{ opacity: 0 }}
+      // initial={{ opacity: 0 , x:"-100vw"}}
+      // animate={{ opacity: 1 , x:0}}
+      // transition={{ duration: 0.5 }}
+      // exit={{ opacity: 0 }}
     >
        <div className="flex w-full flex-1 flex-col gap-6 px-6 ">
         <motion.div
