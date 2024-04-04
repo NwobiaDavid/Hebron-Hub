@@ -26,7 +26,7 @@ export default async function page() {
         <p className="mt-3 text-base-regular ">
           Complete your profile
         </p>
-        <section className="mt-9 bg-slate-900 p-10 ">
+        <section className="mt-9  p-10 ">
           <AccountProfile user={userData} btnTitle="continue" />
         </section>
     </main>
