@@ -25,7 +25,7 @@ export default function LeftSidebar() {
 
   return (
     <motion.section
-      className="custom-scrollbar leftsidebar"
+      className="custom-scrollbar sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto border-r border-r-neutral-500 bg-white pb-5 pt-28 max-md:hidden"
       // initial={{ opacity: 0 , x:"-100vw"}}
       // animate={{ opacity: 1 , x:0}}
       // transition={{ duration: 0.5 }}

@@ -25,7 +25,7 @@ export const UserCard = ({id, name, username, imgUrl, personType}: Props) => {
                     alt="logo"
                     width={48}
                     height={48}
-                    className='rounded-full object-fill '
+                    className='rounded-full w-[48px] h-[48px] object-fill '
                 />
                 <div className="flex-1 text-ellipsis">
                     <h4 className='text-base-semibold ' > {name} </h4>

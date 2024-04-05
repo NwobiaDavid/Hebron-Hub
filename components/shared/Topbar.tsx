@@ -11,6 +11,7 @@ export default function Topbar() {
         <Image src="/assets/logo.svg" alt="logo" width={28} height={28} />
         <p className="text-heading3-bold  max-xs:hidden">
           Hebron <span className="bg-yellow-400 px-3 py-2 tracking-wider rounded-2xl ">HUB</span>
+          <p className="" >a advice platform for </p>
         </p>
       </Link>
 
